@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>responsive image gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- photo gallery -->
+
+<body>
+  <section>
+    <div>
+      <h1>photo gallery</h1>
+    </div>
+
+    <!-- photo gallery -->
+
+    <ul>
+      <li class="gallery1"> gallery </li>
+      <li class="list active" data-filter="all"> home </li>
+      <li class="list" data-filter="animal"> Animal</li>
+      <li class="list" data-filter="flower"> Flower</li>
+      <li class="list" data-filter="fish">Fish</li>
+    </ul>
+    <!-- list animal flower fish-->
+    <div class="product">
+      <div class="itemBox" data-item="animal">
+        <a href="image/animal4.jpg"><img src="image/animal4.jpg" alt="animal" /></a>
+      </div>
+      <div class="itemBox" data-item="flower">
+        <a href="image/flo4.jpg"><img src="image/flo4.jpg " alt="flower" /></a>
+      </div>
+      <div class="itemBox" data-item="fish">
+        <a href="image/fish4.jpg"><img src="image/fish4.jpg" alt="fish" /></a>
+      </div>
+      <div class="itemBox" data-item="animal">
+        <a href="image/animal5.jpg"><img src="image/animal5.jpg" alt="animal" /></a>
+      </div>
+      <div class="itemBox" data-item="flower">
+        <a href="image/flo5.jpg"><img src="image/flo5.jpg" alt="flowere" /></a>
+      </div>
+      <div class="itemBox" data-item="fish">
+        <a href="image/fish5.jpg"><img src="image/fish5.jpg" alt="fish" /></a>
+      </div>
+      <div class="itemBox" data-item="animal">
+        <a href="image/animal6.jpg"><img src="image/animal6.jpg" alt="animal" /></a>
+      </div>
+      <div class="itemBox" data-item="flower">
+        <a href="image/flo6.jpg"><img src="image/flo6.jpg" alt="flowere" /></a>
+      </div>
+      <div class="itemBox" data-item="fish">
+        <a href="image/fish6.jpg"><img src="image/fish6.jpg" alt="fish" /></a>
+      </div>
+      <div class="itemBox" data-item="animal">
+        <a href="image/animal7.jpg"><img src="image/animal7.jpg" alt="animal" /></a>
+      </div>
+      <div class="itemBox" data-item="flower">
+        <a href="image/flo3.jpg"><img src="image/flo3.jpg" alt="flowere" /></a>
+      </div>
+      <div class="itemBox" data-item="fish">
+        <a href="image/fish3.jpg"><img src="image/fish3.jpg" alt="fish" /></a>
+      </div>
+      <div class="itemBox" data-item="animal">
+        <a href="image/animal3.jpg"><img src="image/animal3.jpg" alt="animal" /></a>
+      </div>
+      <div class="itemBox" data-item="flower">
+        <a href="image/flo2.jpg"><img src="image/flo2.jpg" alt="flowere" /></a>
+      </div>
+      <div class="itemBox" data-item="fish">
+        <a href="image/fish1.jpg"><img src="image/fish1.jpg" alt="fish" /></a>
+      </div>
+      <div class="itemBox" data-item="animal">
+        <a href="image/animal1.jpg"><img src="image/animal1.jpg" alt="animal" /></a>
+      </div>
+      <div class="itemBox" data-item="flower">
+        <a href="image/flo1.jpg"><img src="image/flo1.jpg" alt="flowere" /></a>
+      </div>
+      <div class="itemBox" data-item="fish">
+        <a href="image/fish2.jpg"><img src="image/fish2.jpg" alt="fish" /></a>
+      </div>
+      <div class="itemBox" data-item="animal">
+        <a href="image/animal8.jpg"><img src="image/animal8.jpg" alt="animal" /></a>
+      </div>
+      <div class="itemBox" data-item="flower">
+        <a href="image/flo7.jpg"><img src="image/flo7.jpg" alt="flowere" /></a>
+      </div>
+      <div class="itemBox" data-item="fish">
+        <a href="image/fish7.jpg"><img src="image/fish7.jpg" alt="fish" /></a>
+      </div>
+      <div class="itemBox" data-item="animal">
+        <a href="image/animal2.jpg"><img src="image/animal2.jpg" alt="animal" /></a>
+      </div>
+      <div class="itemBox" data-item="flower">
+        <a href="image/flo8.jpg"><img src="image/flo8.jpg" alt="flowere" /></a>
+      </div>
+      <div class="itemBox" data-item="fish">
+        <a href="image/flo8.jpg"><img src="image/fish8.jpg" alt="fish" /></a>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section>
+    <br>
+
+    <!-- about us -->
+
+    <div class="footer-copyright 
+                    ">©
+      2023
+      Copyright:
+      <a href="index.html">Bonded</a> All
+      Rights
+      Reserved-by Akash pj
+    </div>
+  </section>
+
+  <!-- navbar button reaction js -->
+
+  <script>
+    let list = document.querySelectorAll('.list');
+    let itemBox = document.querySelectorAll('.itemBox');
+    for (let i = 0; i < list.length; i++) {
+      list[i].addEventListener('click', function () {
+        for (let j = 0; j < list.length; j++) {
+          list[j].classList.remove('active');
+        }
+        this.classList.add('active');
+        let dataFilter = this.getAttribute('data-filter');
+        for (let k = 0; k < itemBox.length; k++) {
+          itemBox[k].classList.remove('active');
+          itemBox[k].classList.add('hide');
+          if (itemBox[k].getAttribute('data-item') == dataFilter || dataFilter == "all") {
+            itemBox[k].classList.remove('hide');
+            itemBox[k].classList.add('active');
+          }
+        }
+
+      })
+    }
+  </script>
+</body>
+
+</html>
